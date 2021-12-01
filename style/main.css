@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Teko', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #111;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1140px;
+    
+}
+.title__block {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.title__block h1 {
+    font-size: 50px;
+}
+.title__block p {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.title__block span {
+    font-size: 30px;
+    color: rgb(0, 209, 209);
+}
+#canvas3d {
+    width:100% !important;
+    height: auto !important;
+}
