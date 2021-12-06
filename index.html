@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    
     <script type="text/javascript" src="/dist/paper-full.js"></script>
     <script type="text/javascript" src="/dist/rhill-voronoi-core.js"></script>
     <title>Paper Effects</title>
@@ -167,14 +168,14 @@
                 // http://processing.org/learning/topics/follow3.html
         
                 // The amount of points in the path:
-                var points = 25;
+                var points = 15;
         
                 // The distance between the points:
-                var length = 35;
+                var length = 20;
         
                 var path = new Path({
-                    strokeColor: '#E4141B',
-                    strokeWidth: 20,
+                    strokeColor: '#00ff00',
+                    strokeWidth: 10,
                     strokeCap: 'round'
                 });
         
@@ -478,8 +479,9 @@
     </section>
 
     <section>
+        <h1 style="text-align: center;font-size: 40px;">DRAW!</h1>
         <div class="container">
-            <h1 style="text-align: center;font-size: 40px;">DRAW!</h1>
+           
             <script type="text/paperscript" canvas="canvas6">
                 /////////////////////////////////////////////////////////////////////
                 // Values
@@ -516,5 +518,12 @@
         </div>
     </section>
 
+    <section>
+        <div class="container">
+            <div id="particles-js"></div>
+        </div>
+    </section>
+    <script src="/dist/particles.js"></script>
+    <script src="/dist/app.js"></script>
 </body>
 </html>
