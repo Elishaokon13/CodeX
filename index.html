@@ -4,33 +4,517 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="/scene.json" as="fetch">
-    <title>Spline Examples</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="/dist/paper-full.js"></script>
+    <script type="text/javascript" src="http://paperjs.org/assets/js/rhill-voronoi-core.js"></script>
+    <title>Paper Effects</title>
 </head>
 <body>
-    
-    <main>
-        <section class="title">
-            <div class="container">
-                <div class="title__block">
-                    <h1>Test page</h1>
-                    <p>Page with usage libs Spline + Three.JS</p>
-                    <span>Drag to rotate frame, hover to animate</span>
-                </div>
-            </div>
-        </section>
-        <div id='container'>
-			<canvas id="canvas3d"></canvas>
-		</div>
-		<script type="module">
-			import { Application } from './runtime.js';
-			const app = new Application();
-			app.load('./scene.json');
-		</script>
-    </main>
+
+    <section>
+        <div class="container">
+            <script type="text/paperscript" canvas="canvas1">
+            // The amount of symbol we want to place;
+            var count = 150;
+        
+            // Create a symbol, which we will use to place instances of later:
+            var path = new Path.Circle({
+                center: new Point(0, 0),
+                radius: 5,
+                fillColor: 'white',
+                strokeColor: 'black'
+            });
+        
+            var symbol = new SymbolDefinition(path);
+        
+            // Place the instances of the symbol:
+            for (var i = 0; i < count; i++) {
+                // The center position is a random point in the view:
+                var center = Point.random() * view.size;
+                var placed = symbol.place(center);
+                var scale = (i + 1) / count;
+                placed.scale(scale);
+                placed.data.vector = new Point({
+                    angle: Math.random() * 360,
+                    length : scale * Math.random() / 5
+                });
+            }
+        
+            var vector = new Point({
+                angle: 45,
+                length: 0
+            });
+        
+            var mouseVector = vector.clone();
+        
+            
+        
+            // The onFrame function is called up to 60 times a second:
+            function onFrame(event) {
+                vector = vector + (mouseVector - vector) / 60;
+        
+                // Run through the active layer's children list and change
+                // the position of the placed symbols:
+                for (var i = 0; i < count; i++) {
+                    var item = project.activeLayer.children[i];
+                    var size = item.bounds.size;
+                    var length = vector.length / 10 * size.width / 10;
+                    item.position += vector.normalize(length) + item.data.vector;
+                    keepInView(item);
+                }
+            }
+        
+            function keepInView(item) {
+                var position = item.position;
+                var itemBounds = item.bounds;
+                var bounds = view.bounds;
+                if (itemBounds.left > bounds.width) {
+                    position.x = -item.bounds.width;
+                }
+        
+                if (position.x < -itemBounds.width) {
+                    position.x = bounds.width + itemBounds.width;
+                }
+        
+                if (itemBounds.top > view.size.height) {
+                    position.y = -itemBounds.height;
+                }
+        
+                if (position.y < -itemBounds.height) {
+                    position.y = bounds.height  + itemBounds.height / 2;
+                }
+            }
+            </script>
+            <canvas id="canvas1" resize></canvas>
+        </div>
+    </section>
+
+    <section class="eff-1">
+        <div class="container">
+            <script type="text/paperscript" canvas="canvas2">
+                // The amount of symbol we want to place;
+                var count = 150;
+            
+                project.currentStyle = {
+                    fillColor: 'white'
+                };
+            
+                // Place the instances of the symbol:
+                for (var i = 0; i < count; i++) {
+                    // The center position is a random point in the view:
+                    var center = Point.random() * view.size;
+                    var scale = (i + 1) / count;
+                    var path = new Shape.Circle(center, 5 * scale);
+                    path.data.vector = new Point({
+                        angle: Math.random() * 360,
+                        length : scale * Math.random() / 5
+                    });
+                }
+            
+                var vector = new Point({
+                    angle: 45,
+                    length: 0
+                });
+            
+                var mouseVector = vector.clone();
+            
+                
+            
+                // The onFrame function is called up to 60 times a second:
+                function onFrame(event) {
+                    vector = vector + (mouseVector - vector) / 30;
+            
+                    // Run through the active layer's children list and change
+                    // the position of the placed symbols:
+                    for (var i = 0; i < count; i++) {
+                        var item = project.activeLayer.children[i];
+                        var size = item.bounds.size;
+                        var length = vector.length / 10 * size.width / 10;
+                        item.position += vector.normalize(length) + item.data.vector;
+                        keepInView(item);
+                    }
+                }
+            
+                function keepInView(item) {
+                    var position = item.position;
+                    var itemBounds = item.bounds;
+                    var bounds = view.bounds;
+                    if (itemBounds.left > bounds.width) {
+                        position.x = -item.bounds.width;
+                    }
+            
+                    if (position.x < -itemBounds.width) {
+                        position.x = bounds.width + itemBounds.width;
+                    }
+            
+                    if (itemBounds.top > view.size.height) {
+                        position.y = -itemBounds.height;
+                    }
+            
+                    if (position.y < -itemBounds.height) {
+                        position.y = bounds.height  + itemBounds.height / 2;
+                    }
+                }
+                </script>
+            <canvas id="canvas2" resize  style="background:black"></canvas>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <script type="text/paperscript" canvas="canvas3">
+                // Adapted from the following Processing example:
+                // http://processing.org/learning/topics/follow3.html
+        
+                // The amount of points in the path:
+                var points = 25;
+        
+                // The distance between the points:
+                var length = 35;
+        
+                var path = new Path({
+                    strokeColor: '#E4141B',
+                    strokeWidth: 20,
+                    strokeCap: 'round'
+                });
+        
+                var start = view.center / [10, 1];
+                for (var i = 0; i < points; i++)
+                    path.add(start + new Point(i * length, 0));
+        
+                function onMouseMove(event) {
+                    path.firstSegment.point = event.point;
+                    for (var i = 0; i < points - 1; i++) {
+                        var segment = path.segments[i];
+                        var nextSegment = segment.next;
+                        var vector = segment.point - nextSegment.point;
+                        vector.length = length;
+                        nextSegment.point = segment.point - vector;
+                    }
+                    path.smooth({ type: 'continuous' });
+                }
+        
+                function onMouseDown(event) {
+                    path.fullySelected = true;
+                    path.strokeColor = '#e08285';
+                }
+        
+                function onMouseUp(event) {
+                    path.fullySelected = false;
+                    path.strokeColor = '#e4141b';
+                }
+            </script>
+            <canvas id="canvas3" resize  style="background:rgb(56, 56, 56)"></canvas>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <script type="text/paperscript" canvas="canvas4">
+                // Ported from original Metaball script by SATO Hiroyuki
+                // http://park12.wakwak.com/~shp/lc/et/en_aics_script.html
+                project.currentStyle = {
+                    fillColor: 'black'
+                };
+        
+                var ballPositions = [
+                    [100, 100],
+                    [450, 100], 
+                    [800, 100],
+                    [1150, 100], 
+                    [1500, 100],
+
+                    [300, 450],
+                    [650, 450],
+                    [1000, 450],
+                    [1350, 450],
+                    [1700, 450],
+
+                    [100, 800],
+                    [450, 800], 
+                    [800, 800],
+                    [1150, 800], 
+                    [1500, 800],
+                ];
+        
+                var handle_len_rate = 2.2;
+                var circlePaths = [];
+                var radius = 50;
+                for (var i = 0, l = ballPositions.length; i < l; i++) {
+                    var circlePath = new Path.Circle({
+                        center: ballPositions[i],
+                        radius: 35
+                    });
+                    circlePaths.push(circlePath);
+                }
+        
+                var largeCircle = new Path.Circle({
+                    center: [676, 433],
+                    radius: 50
+                });
+                circlePaths.push(largeCircle);
+        
+                function onMouseMove(event) {
+                    largeCircle.position = event.point;
+                    generateConnections(circlePaths);
+                }
+        
+                var connections = new Group();
+                function generateConnections(paths) {
+                    // Remove the last connection paths:
+                    connections.removeChildren();
+        
+                    for (var i = 0, l = paths.length; i < l; i++) {
+                        for (var j = i - 1; j >= 0; j--) {
+                            var path = metaball(paths[i], paths[j], 0.5, handle_len_rate, 300);
+                            if (path) {
+                                connections.appendTop(path);
+                                path.removeOnMove();
+                            }
+                        }
+                    }
+                }
+        
+                generateConnections(circlePaths);
+        
+                // ---------------------------------------------
+                function metaball(ball1, ball2, v, handle_len_rate, maxDistance) {
+                    var center1 = ball1.position;
+                    var center2 = ball2.position;
+                    var radius1 = ball1.bounds.width / 2;
+                    var radius2 = ball2.bounds.width / 2;
+                    var pi2 = Math.PI / 2;
+                    var d = center1.getDistance(center2);
+                    var u1, u2;
+        
+                    if (radius1 == 0 || radius2 == 0)
+                        return;
+        
+                    if (d > maxDistance || d <= Math.abs(radius1 - radius2)) {
+                        return;
+                    } else if (d < radius1 + radius2) { // case circles are overlapping
+                        u1 = Math.acos((radius1 * radius1 + d * d - radius2 * radius2) /
+                                (2 * radius1 * d));
+                        u2 = Math.acos((radius2 * radius2 + d * d - radius1 * radius1) /
+                                (2 * radius2 * d));
+                    } else {
+                        u1 = 0;
+                        u2 = 0;
+                    }
+        
+                    var angle1 = (center2 - center1).getAngleInRadians();
+                    var angle2 = Math.acos((radius1 - radius2) / d);
+                    var angle1a = angle1 + u1 + (angle2 - u1) * v;
+                    var angle1b = angle1 - u1 - (angle2 - u1) * v;
+                    var angle2a = angle1 + Math.PI - u2 - (Math.PI - u2 - angle2) * v;
+                    var angle2b = angle1 - Math.PI + u2 + (Math.PI - u2 - angle2) * v;
+                    var p1a = center1 + getVector(angle1a, radius1);
+                    var p1b = center1 + getVector(angle1b, radius1);
+                    var p2a = center2 + getVector(angle2a, radius2);
+                    var p2b = center2 + getVector(angle2b, radius2);
+        
+                    // define handle length by the distance between
+                    // both ends of the curve to draw
+                    var totalRadius = (radius1 + radius2);
+                    var d2 = Math.min(v * handle_len_rate, (p1a - p2a).length / totalRadius);
+        
+                    // case circles are overlapping:
+                    d2 *= Math.min(1, d * 2 / (radius1 + radius2));
+        
+                    radius1 *= d2;
+                    radius2 *= d2;
+        
+                    var path = new Path({
+                        segments: [p1a, p2a, p2b, p1b],
+                        style: ball1.style,
+                        closed: true
+                    });
+                    var segments = path.segments;
+                    segments[0].handleOut = getVector(angle1a - pi2, radius1);
+                    segments[1].handleIn = getVector(angle2a + pi2, radius2);
+                    segments[2].handleOut = getVector(angle2b - pi2, radius2);
+                    segments[3].handleIn = getVector(angle1b + pi2, radius1);
+                    return path;
+                }
+        
+                // ------------------------------------------------
+                function getVector(radians, length) {
+                    return new Point({
+                        // Convert radians to degrees:
+                        angle: radians * 180 / Math.PI,
+                        length: length
+                    });
+                }
+            </script>
+            <canvas id="canvas4" resize  style="background:white"></canvas>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <script type="text/paperscript" canvas="canvas5">
+                var voronoi = new Voronoi();
+                var sites = generateBeeHivePoints(view.size / 200, true);
+                var bbox, diagram;
+                var oldSize = view.size;
+                var spotColor = new Color('white');
+                var mousePos = view.center;
+                var selected = false;
+        
+                onResize();
+        
+                function onMouseDown(event) {
+                    sites.push(event.point);
+                    renderDiagram();
+                }
+        
+                function onMouseMove(event) {
+                    mousePos = event.point;
+                    if (event.count == 0)
+                        sites.push(event.point);
+                    sites[sites.length - 1] = event.point;
+                    renderDiagram();
+                }
+        
+                function renderDiagram() {
+                    project.activeLayer.removeChildren();
+                    var diagram = voronoi.compute(sites, bbox);
+                    if (diagram) {
+                        for (var i = 0, l = sites.length; i < l; i++) {
+                            var cell = diagram.cells[sites[i].voronoiId];
+                            if (cell) {
+                                var halfedges = cell.halfedges,
+                                    length = halfedges.length;
+                                if (length > 2) {
+                                    var points = [];
+                                    for (var j = 0; j < length; j++) {
+                                        v = halfedges[j].getEndpoint();
+                                        points.push(new Point(v));
+                                    }
+                                    createPath(points, sites[i]);
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                function removeSmallBits(path) {
+                    var averageLength = path.length / path.segments.length;
+                    var min = path.length / 50;
+                    for (var i = path.segments.length - 1; i >= 0; i--) {
+                        var segment = path.segments[i];
+                        var cur = segment.point;
+                        var nextSegment = segment.next;
+                        var next = nextSegment.point + nextSegment.handleIn;
+                        if (cur.getDistance(next) < min) {
+                            segment.remove();
+                        }
+                    }
+                }
+        
+                function generateBeeHivePoints(size, loose) {
+                    var points = [];
+                    var col = view.size / size;
+                    for (var i = -1; i < size.width + 1; i++) {
+                        for (var j = -1; j < size.height + 1; j++) {
+                            var point = new Point(i, j) / new Point(size) * view.size + col / 2;
+                            if (j % 2)
+                                point += new Point(col.width / 2, 0);
+                            if (loose)
+                                point += (col / 4) * Point.random() - col / 4;
+                            points.push(point);
+                        }
+                    }
+                    return points;
+                }
+                function createPath(points, center) {
+                    var path = new Path();
+                    if (!selected) {
+                        path.fillColor = spotColor;
+                    } else {
+                        path.fullySelected = selected;
+                    }
+                    path.closed = true;
+        
+                    for (var i = 0, l = points.length; i < l; i++) {
+                        var point = points[i];
+                        var next = points[(i + 1) == points.length ? 0 : i + 1];
+                        var vector = (next - point) / 2;
+                        path.add({
+                            point: point + vector,
+                            handleIn: -vector,
+                            handleOut: vector
+                        });
+                    }
+                    path.scale(0.95);
+                    removeSmallBits(path);
+                    return path;
+                }
+        
+                function onResize() {
+                    var margin = 0;
+                    bbox = {
+                        xl: margin,
+                        xr: view.bounds.width - margin,
+                        yt: margin,
+                        yb: view.bounds.height - margin
+                    };
+                    for (var i = 0, l = sites.length; i < l; i++) {
+                        sites[i] = sites[i] * view.size / oldSize;
+                    }
+                    oldSize = view.size;
+                    renderDiagram();
+                }
+        
+                function onKeyDown(event) {
+                    if (event.key == 'space') {
+                        selected = !selected;
+                        renderDiagram();
+                    }
+                }
+            </script>
+            <canvas id="canvas5" resize style="background:rgb(129, 129, 129)"></canvas>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h1 style="text-align: center;font-size: 40px;">DRAW!</h1>
+            <script type="text/paperscript" canvas="canvas6">
+                /////////////////////////////////////////////////////////////////////
+                // Values
+        
+                tool.fixedDistance = 10;
+        
+                var values = { size: tool.fixedDistance };
+        
+                /////////////////////////////////////////////////////////////////////
+                // Mouse handling
+        
+                var point, path;
+        
+                function getPos(pt) {
+                    return (pt / values.size).round() * values.size;
+                }
+        
+                function onMouseDown(event) {
+                    point = getPos(event.point);
+                    path = new Path();
+                    path.strokeColor = 'black';
+                    path.add(point);
+                }
+        
+                function onMouseDrag(event) {
+                    var p = getPos(event.point);
+                    if (point != p) {
+                        path.add(p);
+                        point = p;
+                    }
+                }
+            </script>
+            <canvas id="canvas6" resize style="background:rgb(255, 255, 255)"></canvas>
+        </div>
+    </section>
+
 </body>
 </html>
