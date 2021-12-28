@@ -616,6 +616,11 @@ footer .footer__info>span {
     line-height: 18px;
     margin-bottom: 5px;
 }
+footer .footer__contact {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
 footer .footer__contact>div {
     display: flex;
     flex-direction: column;
