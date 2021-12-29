@@ -1,0 +1,137 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+::selection {
+    background: #2a0061;
+}
+::-moz-selection {
+    background: #2a0061;
+}
+body {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+.enter {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #000000, #080053, #000000, #310000, #000000, #4a007c);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.enter .enter__block {
+    width: 100%;
+    max-width: 1400px;
+    height: 75vh;
+    border-radius: 24px;
+    backdrop-filter: blur(30px);
+    border: 2px solid #ffffff0a;
+    background: #ffffff08;
+    padding: 25px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.enter .enter__block .enter__toptext {
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+.enter .enter__block .enter__name {
+    font-weight: 200;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+.enter .enter__block .enter__prof {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 35px;
+    background: linear-gradient(270deg, #5200b8 33%, #0009ff 66%, #00e9e9);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 50px;
+}
+.enter .enter__block .enter__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffffc7;
+    margin-bottom: 50px;
+    max-width: 500px;
+}
+@keyframes btnGradient {
+    0% {
+        border-image: linear-gradient(0deg, #f92056 38%, #565cff 65%);
+        border-image-slice: 1;
+    }
+    25% {
+        border-image: linear-gradient(90deg, #f92056 38%, #565cff 65%);
+        border-image-slice: 1;
+    }
+    50% {
+        border-image: linear-gradient(180deg, #f92056 38%, #565cff 65%);
+        border-image-slice: 1;
+    }
+    75% {
+        border-image: linear-gradient(270deg, #f92056 38%, #565cff 65%);
+        border-image-slice: 1;
+    }
+    100% {
+        border-image: linear-gradient(360deg, #f92056 38%, #565cff 65%);
+        border-image-slice: 1;
+    }
+}
+.enter .enter__block .enter__btn {
+    position: relative;
+    display: block;
+    outline: none;
+    padding: 15px 60px 15px 40px;
+    background: #d1000029;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid;
+    animation: btnGradient 2s infinite;
+}
+.enter .enter__block .enter__btn::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f061';
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    transition: 0.3s all;
+}
+.enter .enter__block .enter__btn:hover::before {
+    right: 25px;
+}
+.enter .enter__block .enter__btn:active::before {
+    font-size: 20px;
+}
+.enter .enter__block .enter__img {
+    max-width: 467px;
+}
