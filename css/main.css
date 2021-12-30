@@ -1,0 +1,665 @@
+@font-face {
+    font-family: "VTB Group Cond Book"; 
+    src: url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.eot"); 
+    src: url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.eot?#iefix") format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.ttf") format("truetype"), 
+    url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.svg#VTB Group Cond Book") format("svg"); 
+}
+@font-face {
+    font-family: "VTB Group Light"; 
+    src: url("//db.onlinewebfonts.com/t/c60671675fb6850a59d1a3a3aee0ba75.eot"); 
+    src: url("//db.onlinewebfonts.com/t/c60671675fb6850a59d1a3a3aee0ba75.eot?#iefix") format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/c60671675fb6850a59d1a3a3aee0ba75.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/c60671675fb6850a59d1a3a3aee0ba75.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/c60671675fb6850a59d1a3a3aee0ba75.ttf") format("truetype"), 
+    url("//db.onlinewebfonts.com/t/c60671675fb6850a59d1a3a3aee0ba75.svg#VTB Group Light") format("svg"); 
+}
+* {
+    box-sizing: border-box;
+    font-family: "VTB Group Cond Book";
+}
+
+body {
+    margin: 0;
+    position: relative;
+}
+header {
+    position: relative;
+    min-height: 100vh;
+    background: url('/source/header-bg.svg') center center/cover no-repeat;
+}
+img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+.max-container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.min-container {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+}
+.header__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+header .header__wrapper {
+    padding: 50px 0 0 0;
+    display: flex;
+    margin-bottom: 100px;
+}
+header .header__wrapper .logo {
+    margin-right: auto;
+}
+header .header__wrapper .logo img {
+    display: block;
+    max-width: 184px;
+}
+
+header .header__wrapper .mobile {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    margin-right: 40px;
+}
+header .header__wrapper .mobile .upper__text {
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "VTB Group Light"; 
+}
+header .header__wrapper .mobile .lower__link {
+    position: relative;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+header .header__wrapper .mobile .lower__link:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    width: 14px;
+    height: 30.5px;
+    transform: translateY(-50%);
+    background: url('/source/phone.svg') center center/cover no-repeat;
+}
+
+
+header .header__wrapper .service {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    margin-right: 40px;
+}
+header .header__wrapper .service .upper__text {
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "VTB Group Light"; 
+}
+header .header__wrapper .service .lower__link {
+    position: relative;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+header .header__wrapper .service .lower__link:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    width: 25px;
+    height: 25px;
+    transform: translateY(-50%);
+    background: url('/source/headphones.svg') center center/cover no-repeat;
+}
+
+header .header__info {
+    display: flex;
+    flex-direction: column;
+}
+header .header__info .header__info__translink {
+    font-size: 24px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: #00AAFF;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+header .header__info .header__info__title {
+    font-size: 62px;
+    line-height: 65px;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: #fff;
+    max-width: 640px;
+    margin-bottom: 60px;
+    margin-top: 0;
+}
+header .header__info .header__info__btnlink {
+    font-family: "VTB Group Light"; 
+    background: #E62632;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 48px;
+    padding: 8px 46px;
+    text-decoration: none;
+    transition: 0.3s all;
+    width: fit-content;
+}
+header .header__info .header__info__btnlink:hover {
+    background: #b91f29;
+}
+main {
+    position: relative;
+    top: -170px;
+    margin-bottom: -60px;
+}
+main .video {
+    min-height: 546px;
+    background: url('/source/video-skeleton.png') center center/cover no-repeat;
+    box-shadow: 0px 20px 57px rgba(0, 25, 83, 0.7);
+    position: relative;
+}
+main .video .play {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    display: block;
+    border-radius: 100%;
+    box-shadow: 0px 0px 30px rgba(0, 40, 130, 0.3);
+    background: #ffffffad;
+    transition: 0.3s all;
+}
+main .video .play::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    opacity: 0.75;
+    transition: 0.3s all;
+    transform: translate(-50%, -50%);
+    width: 33px;
+    height: 64px;
+    background: url('/source/triangle.svg') center center/cover no-repeat;
+}
+main .video .play:hover {
+    background: #ffffff;
+}
+main .video .play:hover:before {
+    opacity: 1;
+}
+main .main__block {
+    background: #F8F8F8;
+    padding: 83px 100px;
+    margin-bottom: 80px;
+}
+main .main__block .speaker__choose {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    margin-bottom: 30px;
+}
+main .main__block .speaker__choose .speaker__choose__text {
+    font-family: "VTB Group Light";
+    font-size: 16px;
+    line-height: 26px;
+    color: #727272;
+}
+main .main__block .speaker__choose .nice-select {
+    font-family: 'VTB Group Light';
+    font-size: 16px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 18px;
+    padding-right: 60px;
+    width: 230px;
+}
+.nice-select .option {
+    font-weight: 600;
+    font-family: 'VTB Group Light';
+}
+.nice-select .current {
+    font-weight: 400;
+    font-family: 'VTB Group Light';
+}
+.nice-select .option.selected {
+    color: #00AAFF;
+}
+.nice-select .option:hover {
+    color: #00AAFF;
+}
+.nice-select .list {
+    width: 100%;
+}
+main .quest__wrapper {
+    overflow-y: scroll;
+    max-height: 1100px;
+    position: relative;
+    margin-bottom: 50px;
+}
+main .quest__wrapper::-webkit-scrollbar {
+    width: 3px;
+}
+main .quest__wrapper::-webkit-scrollbar-track {
+    background: #EBEBEB;
+}
+main .quest__wrapper::-webkit-scrollbar-thumb {
+    background: #1E4BD2;
+}
+main .quest__wrapper::-webkit-scrollbar-thumb:hover {
+    background: #193daa;
+}
+main .quest__wrapper .quest__item {
+    padding: 30px 0;
+    margin-right: 67px;
+    border-bottom: 1px solid #EBEBEB;
+}
+main .quest__wrapper .quest__item .quest__header {
+    display: flex;
+    margin-bottom: 20px;
+}
+main .quest__wrapper .quest__item .quest__header .quest__num {
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'VTB Group Light';
+    margin-right: 5px;
+    font-weight: 600;
+}
+main .quest__wrapper .quest__item .quest__header .quest__info {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    font-family: 'VTB Group Light';
+}
+main .quest__wrapper .quest__item .quest__header .quest__info>span {
+    font-weight: 600;
+}
+main .quest__wrapper .quest__item .quest__body {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+    color: #727272;
+    font-family: 'VTB Group Light';
+    margin-bottom: 10px;
+}
+main .quest__wrapper .quest__item .quest__footer .quest__date{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: 'VTB Group Light';
+    color: #727272;
+}
+
+
+main .main__block .qform {
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 20px 57px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 38px 30px 46px 30px;
+    display: flex;
+    flex-direction: column;
+}
+main .main__block .qform .qform__title {
+    font-family: 'VTB Group Light';
+    font-size: 42px;
+    line-height: 48px;
+    color: #002882;
+    margin: 0 0 30px 0;
+    display: block;
+    text-align: center;
+}
+main .main__block .qform label {
+    font-family: 'VTB Group Light';
+    font-size: 16px;
+    line-height: 16px;
+    color: #282828;
+    display: block;
+    width: fit-content;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    position: relative;
+}
+main .main__block .qform label.required::after {
+    content: "*";
+    color: #282828;
+    font-size: 16px;
+    right: -12px;
+    position: absolute;
+}
+main .main__block .qform textarea {
+    border: 1px solid #B9B9B9;
+    border-radius: 3px;
+    display: block;
+    height: 90px;
+    padding: 15px;
+    font-family: 'VTB Group Light';
+    font-size: 16px;
+    color: #727272;
+    resize: none;
+    outline: none;
+    transition: 0.3s all;
+    margin-bottom: 30px;
+}
+main .main__block .qform textarea:focus {
+    border: 1px solid #252525;
+}
+main .main__block .qform .qform__select {
+    width: 100%;
+    margin-bottom: 38px;
+}
+main .main__block .qform .qform__select .nice-select {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    border: 1px solid #B9B9B9;
+}
+main .main__block .qform .qform__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main .main__block .qform .qform__footer .qform__descr {
+    font-family: 'VTB Group Light';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #727272;
+}
+main .main__block .qform .qform__footer .qform__submit {
+    background: #1E4BD2;
+    border-radius: 3px;
+    font-family: 'VTB Group Light';
+    outline: none;
+    border: none;
+    transition: 0.3s all;
+    color: #ffffff;
+    padding: 23px 107px;
+    cursor: pointer;
+    font-size: 18px;
+}
+main .main__block .qform .qform__footer .qform__submit:hover {
+    background: #183ca8;
+}
+
+main .speakers .speakers__title {
+    font-family: 'VTB Group Light';
+    font-size: 42px;
+    line-height: 48px;
+    color: #002882;
+    display: block;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+main .speakers .speakers__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+}
+main .speakers .speakers__wrapper .speakers__item {
+    width: calc(100% / 3);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+main .speakers .speakers__wrapper .speakers__item .speaker__img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+main .speakers .speakers__wrapper .speakers__item .speaker__name {
+    font-family: 'VTB Group Light';
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #000000;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+main .speakers .speakers__wrapper .speakers__item .speaker__info {
+    font-family: 'VTB Group Light';
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    display: block;
+    margin: 0;
+}
+
+main .prog .prog__title {
+    font-family: 'VTB Group Light';
+    font-size: 42px;
+    line-height: 48px;
+    color: #002882;
+    display: block;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+main .prog .prog__block .prog__header {
+    background: #002882;
+    height: 90px;
+    padding: 30px;
+}
+main .prog .prog__block .prog__header>span {
+    font-family: 'VTB Group Light';
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(odd) {
+    background: #E5F6FF;
+    transition: 0.3s all;
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(odd):hover {
+    background: #dbeef8;
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(even) {
+    background: #FFFFFF;
+    transition: 0.3s all;
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(even):hover {
+    background: #f8f8f8;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__switcher {
+    display: flex;
+    min-height: 80px;
+    padding: 0 30px;
+    align-items: center;
+    cursor: pointer;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__switcher .item__time {
+    font-family: 'VTB Group Light';
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 22px;
+    color: #282828;
+    margin-right: 40px;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__switcher .item__title {
+    font-family: 'VTB Group Light';
+    font-size: 22px;
+    line-height: 22px;
+    color: #282828;
+    margin-right: auto;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__switcher .item__btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: relative;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__switcher .item__btn::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 7px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('/source/mtri.svg') center center/cover no-repeat;
+    transition: 0.3s all;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__switcher.active .item__btn::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(odd) .prog__item__switcher .item__btn {
+    background: #FFFFFF;
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(even) .prog__item__switcher .item__btn {
+    background: #E5F6FF;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__expandable {
+    padding: 30px 0;
+    margin: 0 30px;
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(odd) .prog__item__expandable {
+    border-top: 1px solid #D5E6EF;
+}
+main .prog .prog__block .prog__body .prog__item:nth-child(even) .prog__item__expandable {
+    border-top: 1px solid #EBEBEB;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__expandable .exp__title {
+    font-family: 'VTB Group Light';
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 22px;
+    color: #282828;
+    margin-bottom: 20px;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__expandable .exp__speakers {
+    display: flex;
+    flex-wrap: wrap;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__expandable .exp__speakers .exp__sp__item {
+    width: calc(100% / 3);
+    padding: 0 90px 0 0;
+    margin-bottom: 20px;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__expandable .exp__speakers .exp__sp__item .sp__item__name {
+    font-family: 'VTB Group Light';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #282828;
+    margin-bottom: 5px;
+}
+main .prog .prog__block .prog__body .prog__item .prog__item__expandable .exp__speakers .exp__sp__item .sp__item__info {
+    font-family: 'VTB Group Light';
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+main .prog .prog__block .prog__footer {
+    padding-top: 30px;
+}
+main .prog .prog__block .prog__footer>span {
+    font-family: 'VTB Group Light';
+    font-size: 16px;
+    line-height: 16px;
+    color: #282828;
+}
+footer {
+    height: 240px;
+    align-items: center;
+    display: flex;
+    background: #002882;
+}
+footer .footer__info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+footer .footer__info>span {
+    font-family: 'VTB Group Light';
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 5px;
+}
+footer .footer__contact {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+footer .footer__contact>div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    position: relative;
+}
+footer .footer__contact .con__link {
+    font-family: 'VTB Group Light';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+footer .footer__contact .con__text {
+    font-family: 'VTB Group Light';
+    font-size: 14px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+footer .footer__contact .con__mobile::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 31px;
+    position: absolute;
+    top: -3px;
+    left: 12px;
+    background: url(/source/phone.svg) center center/cover no-repeat;
+}
+footer .footer__contact .con__service::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    background: url(/source/headphones.svg) center center/cover no-repeat;
+}

@@ -4,32 +4,346 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/css/normalize.css">
-    <link rel="stylesheet" href="/src/css/main.css">
-    <title>Fibonachi</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>VTB-Bank</title>
 </head>
 <body>
-    <div class="enter">
-        <div class="enter__block">
-            <div class="wrapper">
-                <p class="enter__toptext">Hello World!</p>
-                <p class="enter__name">Aleksin Danila Sergeevich</p>
-                <p class="enter__prof">Я Frontend разработчик</p>
-                <p class="enter__info">
-                    Frontend разработка на React + Redux<br>
-                    Разработка лендингов и интернет-магазинов на Bitrix Framework<br>
-                    Анимирование всего (GSAP, Anime.JS)<br>
-                    Разработка HTML5 баннеров
-                </p>
-                <button class="enter__btn">Перейти к портфолио</button>
+    <header>
+        <!-- <img src="source/header-bg.svg" alt="" class="header__bg"> -->
+        <div class="max-container">
+            <div class="header__wrapper">
+                <div class="logo">
+                    <a href="/">
+                        <img src="source/logo.svg" alt="" class="header__logo">
+                    </a>
+                </div>
+                <div class="mobile">
+                    <span class="upper__text">Бесплатно с мобильного</span>
+                    <a href="tel:5050" class="lower__link">5050</a>
+                </div>
+                <div class="service">
+                    <span class="upper__text">Справочная служба</span>
+                    <a href="tel:+77273305050" class="lower__link">+7 (727) 330-50-50</a>
+                </div>
             </div>
-            <img src="src/img/enter.svg" alt="fibonachi" class="enter__img">
+            <div class="header__info">
+                <a href="/" class="header__info__translink">Трансляция</a>
+                <h1 class="header__info__title">Онлайн конференция для корпоративного бизнеса</h1>
+                <a href="/" class="header__info__btnlink">Смотреть трансляцию</a>
+            </div>
         </div>
-    </div>
-    <script src="/src/js/main.js"></script>
+    </header>
+    <main>
+        <div class="min-container">
+            <div class="video">
+                <video src="" class="main__video" style="display:none"></video>
+                <span class="play"></span>
+            </div>
+            <div class="main__block">
+                <div class="speaker__choose">
+                    <span class="speaker__choose__text">Выберите из списка, для кого показывать вопросы</span>
+                    <div class="speaker__choose__switcher">
+                        <select class="selectbox">
+                            <option data-display="Все спикеры">Все спикеры</option>
+                            <option value="1">Мария Хаджиева</option>
+                            <option value="2">Петров Сергей</option>
+                            <option value="3">Иванов Максим</option>
+                            <option value="4">Сидоров Михаил</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="quest__wrapper">
+
+                    <div class="quest__item">
+                        <div class="quest__header">
+                            <div class="quest__num">Вопрос №1</div>
+                            <div class="quest__info">для <span>Мария Хаджиева</span></div>
+                        </div>
+                        <div class="quest__body">
+                            Добрый день. Подскажите, идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. 
+                        </div>
+                        <div class="quest__footer">
+                            <div class="quest__date">12.12.21 в 17:53</div>
+                        </div>
+                    </div>
+
+                    <div class="quest__item">
+                        <div class="quest__header">
+                            <div class="quest__num">Вопрос №1</div>
+                            <div class="quest__info">для <span>Мария Хаджиева</span></div>
+                        </div>
+                        <div class="quest__body">
+                            Добрый день. Подскажите, идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. 
+                        </div>
+                        <div class="quest__footer">
+                            <div class="quest__date">12.12.21 в 17:53</div>
+                        </div>
+                    </div>
+
+                    <div class="quest__item">
+                        <div class="quest__header">
+                            <div class="quest__num">Вопрос №1</div>
+                            <div class="quest__info">для <span>Мария Хаджиева</span></div>
+                        </div>
+                        <div class="quest__body">
+                            Добрый день. Подскажите, идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. 
+                        </div>
+                        <div class="quest__footer">
+                            <div class="quest__date">12.12.21 в 17:53</div>
+                        </div>
+                    </div>
+
+                    <div class="quest__item">
+                        <div class="quest__header">
+                            <div class="quest__num">Вопрос №1</div>
+                            <div class="quest__info">для <span>Мария Хаджиева</span></div>
+                        </div>
+                        <div class="quest__body">
+                            Добрый день. Подскажите, идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. 
+                        </div>
+                        <div class="quest__footer">
+                            <div class="quest__date">12.12.21 в 17:53</div>
+                        </div>
+                    </div>
+
+                    <div class="quest__item">
+                        <div class="quest__header">
+                            <div class="quest__num">Вопрос №1</div>
+                            <div class="quest__info">для <span>Мария Хаджиева</span></div>
+                        </div>
+                        <div class="quest__body">
+                            Добрый день. Подскажите, идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. 
+                        </div>
+                        <div class="quest__footer">
+                            <div class="quest__date">12.12.21 в 17:53</div>
+                        </div>
+                    </div>
+
+                    <div class="quest__item">
+                        <div class="quest__header">
+                            <div class="quest__num">Вопрос №1</div>
+                            <div class="quest__info">для <span>Мария Хаджиева</span></div>
+                        </div>
+                        <div class="quest__body">
+                            Добрый день. Подскажите, идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. 
+                        </div>
+                        <div class="quest__footer">
+                            <div class="quest__date">12.12.21 в 17:53</div>
+                        </div>
+                    </div>
+
+                    <div class="quest__item">
+                        <div class="quest__header">
+                            <div class="quest__num">Вопрос №1</div>
+                            <div class="quest__info">для <span>Мария Хаджиева</span></div>
+                        </div>
+                        <div class="quest__body">
+                            Добрый день. Подскажите, идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. 
+                        </div>
+                        <div class="quest__footer">
+                            <div class="quest__date">12.12.21 в 17:53</div>
+                        </div>
+                    </div>
+                </div>
+                <form class="qform">
+                    <h2 class="qform__title">Задать вопрос</h2>
+                    <label class="required">Ваш вопрос</label>
+                    <textarea class="qform__text" placeholder="Введите ссобщение"></textarea>
+                    <label class="">Спикер</label>
+                    <div class="qform__select">
+                        <select class="selectbox">
+                            <option data-display="Выберите спикера, кому задать вопрос">Выберите спикера, кому задать вопрос</option>
+                            <option value="1">Мария Хаджиева</option>
+                            <option value="2">Петров Сергей</option>
+                            <option value="3">Иванов Максим</option>
+                            <option value="4">Сидоров Михаил</option>
+                        </select>
+                    </div>
+                    <div class="qform__footer">
+                        <span class="qform__descr">*- Поля обязательные к заполнению</span>
+                        <input type="submit" value="Отправить" class="qform__submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="max-container">
+            <div class="speakers">
+                <h2 class="speakers__title">Спикеры конференции</h2>
+                <div class="speakers__wrapper">
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                    <div class="speakers__item">
+                        <div class="speaker__img">
+                            <img src="source/speakers/1.svg" alt="">
+                        </div>
+                        <span class="speaker__name">Дмитрий Забелло</span>
+                        <p class="speaker__info">Председатель правления банка ВТБ (Казахстан)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prog">
+                <h2 class="prog__title">Программа мероприятия</h2>
+                <div class="prog__block">
+                    <div class="prog__header">
+                        <span>Конференция VTB «Тренды финансовых рынков в 2022 году»</span>
+                    </div>
+                    <div class="prog__body">
+                        <div class="prog__item">
+                            <div class="prog__item__switcher">
+                                <div class="item__time">14:30 – 15:00</div>
+                                <div class="item__title">Приветственное слово</div>
+                                <div class="item__btn"></div>
+                            </div>
+                            <div class="prog__item__expandable" style="display:none">
+                                <div class="exp__title">Спикеры</div>
+                                <div class="exp__speakers">
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prog__item">
+                            <div class="prog__item__switcher">
+                                <div class="item__time">14:30 – 15:00</div>
+                                <div class="item__title">Приветственное слово</div>
+                                <div class="item__btn"></div>
+                            </div>
+                            <div class="prog__item__expandable" style="display:none">
+                                <div class="exp__title">Спикеры</div>
+                                <div class="exp__speakers">
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prog__item">
+                            <div class="prog__item__switcher">
+                                <div class="item__time">14:30 – 15:00</div>
+                                <div class="item__title">Приветственное слово</div>
+                                <div class="item__btn"></div>
+                            </div>
+                            <div class="prog__item__expandable" style="display:none">
+                                <div class="exp__title">Спикеры</div>
+                                <div class="exp__speakers">
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                    <div class="exp__sp__item">
+                                        <div class="sp__item__name">Арман Мангитов</div>
+                                        <div class="sp__item__info">заместитель председателя  правления, банка ВТБ (Казахстан)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prog__footer">
+                        <span>* В программе указано время Алматы.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="max-container">
+            <div class="footer__info">
+                <span class="footer__license">Лицензия АРРФР РК № 1.2.14/39 от 03.02.2020 г.</span>
+                <span class="footer__address">Адрес: г. Алматы, ул.Тимирязева, 26/29</span>
+            </div>
+            <div class="footer__contact">
+                <div class="con__mobile">
+                    <a href="tel:5050" class="con__link">5050</a>
+                    <span class="con__text">Бесплатно с мобильного</span>
+                </div>
+                <div class="con__service">
+                    <a href="tel:+77273305050" class="con__link">+7 (727) 330-50-50</a>
+                    <span class="con__text">Справочная служба</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
