@@ -345,3 +345,44 @@ footer .bottom a.top-btn {
 #quest .car__img img {
     object-fit: cover;
 }
+
+
+
+.wheel {
+    position: relative;
+}
+@keyframes rotateWheel {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.wheel>div {
+    position: relative;
+}
+.wheel .back__wheel {
+    width: 195px;
+    height: 390px;
+    overflow: hidden;
+}
+.wheel .front__wheel {
+    width: 195px;
+    height: 390px;
+    overflow: hidden;
+}
+.wheel .back__wheel img {
+    animation: rotateWheel 12s linear infinite;
+    object-fit: none;
+    height: 390px;
+    max-width: none;
+}
+.wheel .front__wheel img {
+    animation: rotateWheel 12s linear infinite;
+    object-fit: none;
+    height: 390px;
+    max-width: none;
+    left: -195px;
+    position: absolute;
+}
