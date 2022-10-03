@@ -41,7 +41,7 @@ body a:hover {
     color: var(--mainBg)
 }
 footer {
-    background: url(./media/footer/bg.png) center center/cover no-repeat;
+    background: url(.../media/footer/bg.png) center center/cover no-repeat;
     padding: 40px 0;
 }
 footer .wrapper {
@@ -254,7 +254,7 @@ footer .bottom a.top-btn {
 }
 #news .block__line {
     padding: 43px 0;
-    background: url(./media/news/line.png) center center/cover no-repeat;
+    background: url(../media/news/line.png) center center/cover no-repeat;
     position: absolute;
     top: -70px;
     width: 100%;
@@ -274,7 +274,7 @@ footer .bottom a.top-btn {
 
 #quest {
     padding: 80px 0 57px 0;
-    background: url(./media/quest/bg.png) center center/cover no-repeat;
+    background: url(../media/quest/bg.png) center center/cover no-repeat;
 }
 #quest .inner {
     max-width: 770px;
@@ -328,7 +328,7 @@ footer .bottom a.top-btn {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background: url(./media/quest/cube.svg) center center/cover no-repeat;
+    background: url(../media/quest/cube.svg) center center/cover no-repeat;
     width: 15px;
     height: 15px;
 }
@@ -564,7 +564,7 @@ footer .bottom a.top-btn {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background: url(./media/news/name.svg) center center/auto no-repeat;
+    background: url(../media/news/name.svg) center center/auto no-repeat;
 }
 #gallery .items li:hover .layer {
     opacity: 1;
@@ -594,7 +594,7 @@ footer .bottom a.top-btn {
 }
 #gallery .block__line {
     padding: 43px 0;
-    background: url(./media/news/line.png) center center/cover no-repeat;
+    background: url(../media/news/line.png) center center/cover no-repeat;
     position: absolute;
     top: -70px;
     width: 100%;
@@ -616,7 +616,7 @@ footer .bottom a.top-btn {
 #work {
     position: relative;
     padding: 80px 0 180px 0;
-    background: url(./media/work/bg.png) center center/cover no-repeat;
+    background: url(../media/work/bg.png) center center/cover no-repeat;
 }
 #work h2 {
     font-weight: 600;
@@ -779,7 +779,7 @@ footer .bottom a.top-btn {
 #performance {
     position: relative;
     padding: 80px 0;
-    background: url(./media/performance/bg.png) center center/cover no-repeat;
+    background: url(../media/performance/bg.png) center center/cover no-repeat;
     overflow: hidden;
 }
 #performance h2 {
@@ -821,7 +821,7 @@ footer .bottom a.top-btn {
     top: 0;
     width: 20px;
     height: 22px;
-    background: url(./media/performance/dot.svg) center center/cover no-repeat;
+    background: url(../media/performance/dot.svg) center center/cover no-repeat;
 }
 
 #performance .main .fea {
@@ -874,7 +874,7 @@ footer .bottom a.top-btn {
     top: 0;
     width: 20px;
     height: 22px;
-    background: url(./media/performance/dot-b.svg) center center/cover no-repeat;
+    background: url(../media/performance/dot-b.svg) center center/cover no-repeat;
 }
 
 #performance .side .side__img {
@@ -1120,7 +1120,7 @@ footer .bottom a.top-btn {
 
 #serv .line {
     padding: 45px 0;
-    background: url(./media/serv/line.png) center center/cover no-repeat;
+    background: url(../media/serv/line.png) center center/cover no-repeat;
     position: absolute;
     width: 100%;
     left: 0;
@@ -1265,7 +1265,7 @@ header .bottom a:hover {
 
 #promo {
     padding: 160px 0 100px 0;
-    background: url(./media/promo/1.png) center center/cover no-repeat;
+    background: url(../media/promo/1.png) center center/cover no-repeat;
 }
 #promo .main .wrap {
     max-width: 470px;
@@ -1294,7 +1294,7 @@ header .bottom a:hover {
     position: absolute;
     left: 0;
     top: 0;
-    background: url(./media/header/dot.svg) center center/cover no-repeat;
+    background: url(../media/header/dot.svg) center center/cover no-repeat;
 }
 #promo .main .actions {
     display: flex;
